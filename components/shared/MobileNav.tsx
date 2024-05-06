@@ -3,14 +3,7 @@
 import React from 'react'
 import { navLinks } from '@/constants'
 import { usePathname } from 'next/navigation'
-import {
-    Sheet,
-    SheetContent,
-    SheetDescription,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
-  } from "@/components/ui/sheet"
+import { Sheet,SheetContent,SheetTrigger } from "@/components/ui/sheet"
 import Link from 'next/link'
 import Image from 'next/image'
 import { SignedIn, UserButton } from '@clerk/nextjs'
