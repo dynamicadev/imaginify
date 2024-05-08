@@ -72,10 +72,11 @@ export async function POST(req: Request) {
 
     const newUser = await createUser(user);  
     try {
+      console.log('creando');
       const newUser = await createUser(user);
     } catch (error)  {
       if (error instanceof Error) {
-        console.log(error.message);
+        throw new Error(error.message);
       }
      
       //console.error("Error creating user:", error.message); // Access error message
@@ -122,4 +123,4 @@ export async function POST(req: Request) {
   console.log("Webhook body:", body);
 
   return new Response("", { status: 200 });
-}
+} 
