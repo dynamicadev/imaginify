@@ -64,23 +64,14 @@ export async function POST(req: Request) {
     const user = {
       clerkId: id,
       email: email_addresses[0].email_address,
-      username: 'jsjsjs',
-      firstName: 'dsdd',
-      lastName: 'cccd',
+      username: username!,
+      firstName: first_name!,
+      lastName: last_name!,
       photo: image_url,
     };
 
     const newUser = await createUser(user);  
-    try {
-      console.log('creando');
-      const newUser = await createUser(user);
-    } catch (error)  {
-      if (error instanceof Error) {
-        throw new Error(error.message);
-      }
-     
-      //console.error("Error creating user:", error.message); // Access error message
-    }
+    
 
     // Set public metadata
     if (newUser) {
@@ -123,4 +114,4 @@ export async function POST(req: Request) {
   console.log("Webhook body:", body);
 
   return new Response("", { status: 200 });
-} 
+}
