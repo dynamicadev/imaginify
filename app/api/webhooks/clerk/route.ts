@@ -71,6 +71,15 @@ export async function POST(req: Request) {
     };
 
     const newUser = await createUser(user);  
+    try {
+      const newUser = await createUser(user);
+    } catch (error)  {
+      if (error instanceof Error) {
+        console.log(error.message);
+      }
+     
+      //console.error("Error creating user:", error.message); // Access error message
+    }
 
     // Set public metadata
     if (newUser) {
